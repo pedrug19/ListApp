@@ -58,8 +58,11 @@ Os convidados serão adicionados à Lista de convidados.
 Resumindo:
 
 HOME <-----> REGISTRO/LOGIN
+
 |
+
 |
+
 -----> LISTAEVENTOS <----->  ADDEVENTOS/LISTACONVIDADOS <-----> ADDCONVIDADOS
 
 Bem simples. Por enquanto é só isso.
