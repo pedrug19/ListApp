@@ -1,33 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
-import { LoginPage } from '../login/login';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the HomePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
 export class HomePage {
 
-  user: any;
-  
-  constructor(public navCtrl: NavController, private storage: Storage) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  ionViewDidLoad(){
-  	//this.storage.set('name','max');
 
-  	// Or to get a key/value pair
- 	this.storage.get('userinfo').then((val) => {
- 		if(val == null){
- 			this.navCtrl.push(LoginPage);
- 		}else{
- 			this.user = JSON.parse(val).username;
- 			console.log(this.user);
- 			
- 		}
-    	
- 	});
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
   }
 
 }
