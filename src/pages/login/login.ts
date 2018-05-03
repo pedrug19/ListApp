@@ -27,7 +27,6 @@ export class LoginPage {
   		this.userinfo = {username:"", password:""} ;
     }
   
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }

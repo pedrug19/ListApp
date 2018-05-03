@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title [color] = "red">Adicionar Evento</ion-title>
+    <ion-title text-center>Adicionar Evento</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+	<div text-center>
+		<ion-item>
+	    <ion-label>Nome do Evento</ion-label>
+	    	<ion-input [(ngModel)]= this.eventos.name type="text"></ion-input>
+	  	</ion-item>
 
+	  	<ion-item>
+	    <ion-label>Local</ion-label>
+	    	<ion-input [(ngModel)]= this.eventos.local type="text"></ion-input>
+	  	</ion-item>	
+
+	  	<ion-item>
+	 	 	<ion-label>Data</ion-label>
+	 	 	<ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+		</ion-item>
+
+	  	<button (click)="onRegisteredButtonClick()" ion-button >Cadastrar</button>
+	</div>
 </ion-content>
