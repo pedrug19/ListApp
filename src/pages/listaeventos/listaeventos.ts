@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddeventoPage } from '../addevento/addevento';
 
 /**
  * Generated class for the ListaeventosPage page.
@@ -20,6 +21,10 @@ export class ListaeventosPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaeventosPage');
+  }
+
+  onAddEventosButtonClick() {
+  	this.navCtrl.push(AddeventoPage);
   }
 
 }
