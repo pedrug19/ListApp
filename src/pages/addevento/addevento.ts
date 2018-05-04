@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage'
-import { ListaconvidadosPage } from '../listaconvidados/listaconvidados';
 
 /**
  * Generated class for the AddeventoPage page.
@@ -30,10 +29,6 @@ export class AddeventoPage {
   onRegisteredButtonClick() {
   	this.storage.set('eventos',JSON.stringify(this.eventos));
   	this.navCtrl.pop();
-  }
-
-  onEventoButtonClick() {
-    this.navCtrl.push(ListaconvidadosPage);
   }
 
 }
