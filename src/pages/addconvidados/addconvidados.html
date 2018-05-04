@@ -16,24 +16,42 @@
 <ion-content padding>
 	<div text-center>
 		<ion-item>
-	    <ion-label>Nome</ion-label>
-	    	<ion-input [(ngModel)]= this.convidados.name type="text"></ion-input>
+	    	<ion-input placeholder="Nome" [(ngModel)]= this.convidados.name type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
-	    <ion-label>RG</ion-label>
-	    	<ion-input [(ngModel)]= this.convidados.rg type="text"></ion-input>
+	    	<ion-input placeholder="RG"  [(ngModel)]= this.convidados.rg type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
-	    <ion-label>Grupo</ion-label>
-	    	<ion-input [(ngModel)]= this.convidados.grupo type="text"></ion-input>
+	    	<ion-input placeholder="Grupo" [(ngModel)]= this.convidados.grupo type="text"></ion-input>
 	  	</ion-item>		
 
-	  	<ion-item>
-	 	 	<ion-label>Data de Nascimento</ion-label>
-	 	 	<ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
-		</ion-item>
+	  	<ion-list radio-group>
+		  <ion-item>
+		    <ion-label>Adulto pagante</ion-label>
+		    <ion-radio checked="true" value="ap"></ion-radio>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label>Adulto não pagante</ion-label>
+		    <ion-radio checked="false" value="an"></ion-radio>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label>Criança não pagante</ion-label>
+		    <ion-radio checked="false" value="cn" ></ion-radio>
+		  </ion-item>
+
+		  <ion-item>
+		    <ion-label>Criança 50%</ion-label>
+		    <ion-radio checked="false" value="cm" ></ion-radio>
+		  </ion-item>
+
+
+		</ion-list>
+
+
 
 		<button (click)="onConvidadosButtonClick()" ion-button>Adicionar Convidado</button>
 	</div>
