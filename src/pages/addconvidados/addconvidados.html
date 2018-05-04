@@ -14,5 +14,28 @@
 
 
 <ion-content padding>
+	<div text-center>
+		<ion-item>
+	    <ion-label>Nome</ion-label>
+	    	<ion-input [(ngModel)]= this.convidados.name type="text"></ion-input>
+	  	</ion-item>
+
+	  	<ion-item>
+	    <ion-label>RG</ion-label>
+	    	<ion-input [(ngModel)]= this.convidados.rg type="text"></ion-input>
+	  	</ion-item>
+
+	  	<ion-item>
+	    <ion-label>Grupo</ion-label>
+	    	<ion-input [(ngModel)]= this.convidados.grupo type="text"></ion-input>
+	  	</ion-item>		
+
+	  	<ion-item>
+	 	 	<ion-label>Data de Nascimento</ion-label>
+	 	 	<ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+		</ion-item>
+
+		<button (click)="onConvidadosButtonClick()" ion-button>Adicionar Convidado</button>
+	</div>
 
 </ion-content>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the AddconvidadosPage page.
@@ -15,11 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddconvidadosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  convidados: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
+  	this.convidados = {name:"", rg:"", grupo:""}
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddconvidadosPage');
+  }
+
+  onConvidadosButtonClick() {
+  	this.storage.set('convidados', JSON.stringify(this.convidados))
+  	this.navCtrl.pop();
   }
 
 }

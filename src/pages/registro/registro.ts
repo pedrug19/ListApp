@@ -5,7 +5,9 @@
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FormBuilder, Validator, FormGroup } from '@angular/forms'
+//import { FormBuilder, Validator, FormGroup } from '@angular/forms'
+import { Storage } from '@ionic/storage';
+
 /**
  * Generated class for the RegistroPage page.
  *
@@ -20,15 +22,21 @@ import { FormBuilder, Validator, FormGroup } from '@angular/forms'
 })
 export class RegistroPage {
 
+  registro: any;
+
   constructor(
   	public navCtrl: NavController,
   	public navParams: NavParams,
-  	public formBuilder: FormBuilder) {
-
+    public storage: Storage) {
+      this.registro = {name:"", pass:""};
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistroPage');
+  }
+
+  onRegisterButtonClick() {
+    this.navCtrl.pop();
   }
 
 }

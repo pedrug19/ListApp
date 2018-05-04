@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AddconvidadosPage } from '../addconvidados/addconvidados';
 
 /**
  * Generated class for the ListaconvidadosPage page.
@@ -21,5 +22,14 @@ export class ListaconvidadosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaconvidadosPage');
   }
+
+   onAddConvidadosButtonClick() {
+  	this.navCtrl.push(AddconvidadosPage);
+  }
+
+  /*onConvidadoButtonClick() {
+    this.navCtrl.push();
+  }*/
+
 
 }

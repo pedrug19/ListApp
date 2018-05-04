@@ -14,5 +14,23 @@
 
 
 <ion-content padding>
+ <p>
+    <ion-list inset>
+
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]= this.registro.name type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Senha</ion-label>
+    <ion-input [(ngModel)]= this.registro.pass type="password"></ion-input>
+  </ion-item>
+
+</ion-list>
+
+
+  </p>
+    <button (click)="onRegisterButtonClick()" ion-button full>Cadastrar</button>
 
 </ion-content>

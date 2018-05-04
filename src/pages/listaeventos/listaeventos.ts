@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddeventoPage } from '../addevento/addevento';
+import { ListaconvidadosPage } from '../listaconvidados/listaconvidados';
 
 /**
  * Generated class for the ListaeventosPage page.
@@ -25,6 +26,10 @@ export class ListaeventosPage {
 
   onAddEventosButtonClick() {
   	this.navCtrl.push(AddeventoPage);
+  }
+
+  onEventoButtonClick() {
+    this.navCtrl.push(ListaconvidadosPage);
   }
 
 }
