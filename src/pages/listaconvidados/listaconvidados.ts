@@ -15,8 +15,16 @@ import { AddconvidadosPage } from '../addconvidados/addconvidados';
   templateUrl: 'listaconvidados.html',
 })
 export class ListaconvidadosPage {
+  convidados: Array<{nome: string, pagante: string}>
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.convidados = [];
+    for (let i = 1; i < 4; i++) {
+      this.convidados.push({
+        nome: "Convidado" + i,
+        pagante: "Pagante"
+      });
+    }
   }
 
   ionViewDidLoad() {

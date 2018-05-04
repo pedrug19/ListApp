@@ -25684,3 +25684,10 @@ ion-navbar.toolbar {
   margin-right: auto;
   display: block;
 }
+
+.eventos {
+  font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

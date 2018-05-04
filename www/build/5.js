@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 287:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddeventoPageModule", function() { return AddeventoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListaconvidadosPageModule", function() { return ListaconvidadosPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__addevento__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__listaconvidados__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var AddeventoPageModule = /** @class */ (function () {
-    function AddeventoPageModule() {
+var ListaconvidadosPageModule = /** @class */ (function () {
+    function ListaconvidadosPageModule() {
     }
-    AddeventoPageModule = __decorate([
+    ListaconvidadosPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__addevento__["a" /* AddeventoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__listaconvidados__["a" /* ListaconvidadosPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__addevento__["a" /* AddeventoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__listaconvidados__["a" /* ListaconvidadosPage */]),
             ],
         })
-    ], AddeventoPageModule);
-    return AddeventoPageModule;
+    ], ListaconvidadosPageModule);
+    return ListaconvidadosPageModule;
 }());
 
-//# sourceMappingURL=addevento.module.js.map
+//# sourceMappingURL=listaconvidados.module.js.map
 
 /***/ })
 

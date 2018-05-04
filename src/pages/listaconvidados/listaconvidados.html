@@ -14,11 +14,25 @@
 
 
 <ion-content padding>
-	<ion-label>
-		EVENTO 1
+	<ion-label class ="eventos" >
+		Evento 1
 	</ion-label>
-		<div text-center>
-		<button ion-button full >CONVIDADO</button>
+	<ion-searchbar placeholder="Pesquisar convidado"></ion-searchbar>
+	<div text-center>
+		<ion-list>
+			<ion-item ngFor="let convidado of convidados">
+				<h2>{{convidado.name}}</h2>
+				<h3>{{convidado.pagante}}</h3>
+				<ion-item-options>
+					<button ion-button icon-checkmark></button>
+				</ion-item-options>
+			</ion-item>	
+			
+			<ion-item>
+				<h2>Convidado 2</h2>
+				<h3>Não-Pagante</h3>
+			</ion-item>	
+		</ion-list>
 		<button (click)="onAddConvidadosButtonClick()" ion-button round outline>Adicionar Convidados</button>
 	</div>
 
