@@ -196,17 +196,17 @@ var ListaeventosPage = /** @class */ (function () {
         this.eventos = [
             { id: 0, nome: "Festa lá no meu Apê" },
             { id: 1, nome: "Aniversário do Carlão" },
-            { id: 2, nome: "Alvaro escravoceta" }
+            { id: 2, nome: "Festa 123" }
         ];
+        this.selecionado = {};
         // this.eventos = {nome: "Festa lá no meu Apê", local:"Meu Apê", data:"20/05/2018"};
-        this.selected = this.eventos[0];
     }
     ListaeventosPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ListaeventosPage');
     };
-    ListaeventosPage.prototype.onEventoClick = function (nome) {
-        this.selected = this.eventos[nome];
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__listaconvidados_listaconvidados__["a" /* ListaconvidadosPage */]);
+    ListaeventosPage.prototype.onEventoClick = function (id) {
+        this.selecionado = this.eventos[id];
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__listaconvidados_listaconvidados__["a" /* ListaconvidadosPage */], { selecionado: this.selecionado });
     };
     ListaeventosPage.prototype.onAddEventosButtonClick = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__addevento_addevento__["a" /* AddeventoPage */]);
@@ -216,7 +216,7 @@ var ListaeventosPage = /** @class */ (function () {
     };
     ListaeventosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-listaeventos',template:/*ion-inline-start:"/home/leonardo/listapp/src/pages/listaeventos/listaeventos.html"*/'<!--\n  Generated template for the ListaeventosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>Lista de Eventos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-list>\n	  <button ion-item *ngFor="let evento of eventos" (click)="onEventoClick(eventos.nome)">\n	    {{ evento.nome }}\n	  </button>  \n	</ion-list>\n\n	<div text-center>\n		<button (click)="onAddEventosButtonClick()" ion-button round outline>Adicionar Eventos</button>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/home/leonardo/listapp/src/pages/listaeventos/listaeventos.html"*/,
+            selector: 'page-listaeventos',template:/*ion-inline-start:"/home/leonardo/listapp/src/pages/listaeventos/listaeventos.html"*/'<!--\n  Generated template for the ListaeventosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>Lista de Eventos</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n	<ion-list>\n	  <button ion-item *ngFor="let evento of eventos" (click)="onEventoClick(evento.id)">\n	    {{ evento.nome }}\n	  </button>  \n	</ion-list>\n\n	<div text-center>\n		<button (click)="onAddEventosButtonClick()" ion-button round outline>Adicionar Eventos</button>\n	</div>\n</ion-content>\n'/*ion-inline-end:"/home/leonardo/listapp/src/pages/listaeventos/listaeventos.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
     ], ListaeventosPage);
@@ -258,6 +258,15 @@ var ListaconvidadosPage = /** @class */ (function () {
     function ListaconvidadosPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.convidados = [
+            { id: 0, nome: "Latino" },
+            { id: 1, nome: "Mc Lan" },
+            { id: 2, nome: "Bilbo" }
+        ];
+        this.texto = "";
+        var nevento = this.navParams.get('selecionado');
+        this.texto = nevento.nome;
+        this.selected = this.convidados[0];
     }
     ListaconvidadosPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ListaconvidadosPage');
@@ -265,13 +274,18 @@ var ListaconvidadosPage = /** @class */ (function () {
     ListaconvidadosPage.prototype.onAddConvidadosButtonClick = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__addconvidados_addconvidados__["a" /* AddconvidadosPage */]);
     };
+    ListaconvidadosPage.prototype.onConvidadoClick = function (id) {
+        this.selected = this.convidados[id];
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__addconvidados_addconvidados__["a" /* AddconvidadosPage */]);
+    };
     ListaconvidadosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-listaconvidados',template:/*ion-inline-start:"/home/leonardo/listapp/src/pages/listaconvidados/listaconvidados.html"*/'<!--\n  Generated template for the ListaconvidadosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>Convidados</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<ion-label>\n		EVENTO 1\n	</ion-label>\n		<div text-center>\n		<button ion-button full >CONVIDADO</button>\n		<button (click)="onAddConvidadosButtonClick()" ion-button round outline>Adicionar Convidados</button>\n	</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/leonardo/listapp/src/pages/listaconvidados/listaconvidados.html"*/,
+            selector: 'page-listaconvidados',template:/*ion-inline-start:"/home/leonardo/listapp/src/pages/listaconvidados/listaconvidados.html"*/'<!--\n  Generated template for the ListaconvidadosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title text-center>Convidados</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n	<ion-label>\n		{{texto}}\n	</ion-label>\n	<ion-list>\n	  <button ion-item *ngFor="let convidado of convidados" (click)="onConvidadoClick(convidados.id)">\n	    {{ convidado.nome }}\n	  </button>  \n	</ion-list>\n		<div text-center>\n		<button ion-button full >CONVIDADO</button>\n		<button (click)="onAddConvidadosButtonClick()" ion-button round outline>Adicionar Convidados</button>\n	</div>\n\n</ion-content>\n'/*ion-inline-end:"/home/leonardo/listapp/src/pages/listaconvidados/listaconvidados.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object])
     ], ListaconvidadosPage);
     return ListaconvidadosPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=listaconvidados.js.map
@@ -633,14 +647,15 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]) === "function" && _a || Object)
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/leonardo/listapp/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/leonardo/listapp/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
     ], MyApp);
     return MyApp;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map

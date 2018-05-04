@@ -16,7 +16,20 @@ import { AddconvidadosPage } from '../addconvidados/addconvidados';
 })
 export class ListaconvidadosPage {
 
+   convidados: any[] = [
+    {id:0,nome:"Latino"}, 
+    {id:1,nome:"Mc Lan"}, 
+    {id:2,nome:"Bilbo"}
+  ];
+
+   selected: any;
+   texto: any = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    var nevento = this.navParams.get('selecionado');
+    this.texto = nevento.nome;
+    this.selected = this.convidados[0];
+
   }
 
   ionViewDidLoad() {
@@ -25,6 +38,11 @@ export class ListaconvidadosPage {
 
    onAddConvidadosButtonClick() {
   	this.navCtrl.push(AddconvidadosPage);
+  }
+
+  onConvidadoClick(id) {
+    this.selected = this.convidados[id];
+    this.navCtrl.push(AddconvidadosPage);
   }
 
   /*onConvidadoButtonClick() {

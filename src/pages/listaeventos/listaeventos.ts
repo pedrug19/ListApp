@@ -20,24 +20,23 @@ export class ListaeventosPage {
   eventos: any[] = [
     {id:0,nome:"Festa lá no meu Apê"}, 
     {id:1,nome:"Aniversário do Carlão"}, 
-    {id:2,nome:"Alvaro escravoceta"}
+    {id:2,nome:"Festa 123"}
   ];
 
 
-  selected: any;
+  selecionado: any = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
    // this.eventos = {nome: "Festa lá no meu Apê", local:"Meu Apê", data:"20/05/2018"};
-    this.selected = this.eventos[0];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaeventosPage');
   }
 
-  onEventoClick(nome) {
-    this.selected = this.eventos[nome];
-    this.navCtrl.push(ListaconvidadosPage);
+  onEventoClick(id) {
+    this.selecionado = this.eventos[id];
+    this.navCtrl.push(ListaconvidadosPage,{ selecionado: this.selecionado });
   }
 
   onAddEventosButtonClick() {
