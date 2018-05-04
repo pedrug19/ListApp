@@ -16,13 +16,10 @@
 <ion-content padding>
 	<div text-center>
 		<button (click)="onEventoButtonClick()" ion-button full >EVENTO</button>
-		<button (click)="onAddEventosButtonClick()" ion-button round outline>Adicionar Eventos</button>
   </div>
   
-  <ion-content>
 		<ion-fab bottom right>
-			<button ion-fab>+</button>
+			<button (click)="onAddEventosButtonClick()" ion-fab>+</button>
 		</ion-fab>
-	</ion-content>
 
 </ion-content>
