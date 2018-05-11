@@ -23,19 +23,16 @@ export class ListaconvidadosPage {
     {id:2,nome:"Bilbo"}
   ];
 
-   selected: any;
-   texto: any = "";
+   selected: any;  
+   nevento: any;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams) {
-    var nevento = this.navParams.get('selecionado');
-    this.texto = nevento.nome;
-    this.selected = this.convidados[0];
-
+    this.nevento = this.navParams.get('selecionado');
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
     console.log('ionViewDidLoad ListaconvidadosPage');
   }
 

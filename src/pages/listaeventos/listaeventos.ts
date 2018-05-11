@@ -20,13 +20,12 @@ import { EventoProvider } from '../../providers/evento/evento';
 export class ListaeventosPage {
 
   eventos: any[];
-  selecionado: any = {};
+  selecionado: any[];
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public eventoProvider: EventoProvider ) {
-   // this.eventos = {nome: "Festa lá no meu Apê", local:"Meu Apê", data:"20/05/2018"};
   }
 
   ionViewDidEnter() {
@@ -39,12 +38,12 @@ export class ListaeventosPage {
     this.navCtrl.push(ListaconvidadosPage,{ selecionado: this.selecionado });
   }
 
-  onAddEventosButtonClick() {
-  	this.navCtrl.push(AddeventoPage);
+  onEditEventoClick(id){
+    this.navCtrl.push(AddeventoPage, {id: id});
   }
 
-  onEventoButtonClick() {
-    this.navCtrl.push(ListaconvidadosPage);
+  onAddEventosButtonClick() {
+  	this.navCtrl.push(AddeventoPage);
   }
 
 }

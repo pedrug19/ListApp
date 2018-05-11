@@ -28,11 +28,14 @@ export class AddeventoPage {
   }
 
   ionViewDidLoad() {
+    var idSelecionado = this.navParams.get('id');
+    if(idSelecionado != null)
+      this.evento = this.eventoProvider.get(idSelecionado);
     console.log('ionViewDidLoad AddeventoPage');
   }
 
   onRegisteredButtonClick() {
-
+    this.evento.id = 3;
     this.eventoProvider.add(this.evento);
   	// this.storage.set('eventos',JSON.stringify(this.eventos));
   	this.navCtrl.pop();

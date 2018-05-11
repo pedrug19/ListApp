@@ -13,7 +13,7 @@ export class EventoProvider {
 
   eventos: Evento[] = [
     {id:0,nome:"Festa lá no meu Apê", data:null, local:null, horario:null }, 
-    {id:1,nome:"Aniversário do Carlão", data:null, local:null, horario:null }, 
+    {id:1,nome:"Aniversário", data:null, local:null, horario:null }, 
     {id:2,nome:"Festa 123", data:null, local:null, horario:null }
   ];
 
@@ -27,6 +27,9 @@ export class EventoProvider {
   }
   add(object) {
     this.eventos.push(object);
+  }
+  get(id){
+    return this.eventos[id];
   }
 
 }
