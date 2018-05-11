@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddconvidadosPage } from '../addconvidados/addconvidados';
 
+
 /**
  * Generated class for the ListaconvidadosPage page.
  *
@@ -25,7 +26,9 @@ export class ListaconvidadosPage {
    selected: any;
    texto: any = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams) {
     var nevento = this.navParams.get('selecionado');
     this.texto = nevento.nome;
     this.selected = this.convidados[0];

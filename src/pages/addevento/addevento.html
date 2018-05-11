@@ -17,17 +17,17 @@
 	<div text-center>
 		<ion-item>
 	    <ion-label floating>Nome do Evento</ion-label>
-	    	<ion-input [(ngModel)] = this.eventos.name type="text"></ion-input>
+	    	<ion-input [(ngModel)] = evento.nome type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
 	    <ion-label floating>Local</ion-label>
-	    	<ion-input [(ngModel)] = this.eventos.local type="text"></ion-input>
+	    	<ion-input [(ngModel)] = evento.local type="text"></ion-input>
 	  	</ion-item>	
 
 	  	<ion-item>
 	 	 	<ion-label floating>Data</ion-label>
-	 	 	<ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="myDate"></ion-datetime>
+	 	 	<ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="evento.data"></ion-datetime>
 		</ion-item>
 		
 	  	<button (click)="onRegisteredButtonClick()" ion-button >Cadastrar</button>

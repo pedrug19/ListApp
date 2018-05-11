@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage'
+import { EventoProvider } from '../../providers/evento/evento';
+import { Evento } from '../../interfaces/Evento';
 
 /**
  * Generated class for the AddeventoPage page.
@@ -16,10 +18,13 @@ import { Storage } from '@ionic/storage'
 })
 export class AddeventoPage {
 
-  eventos: any;
+  evento: Evento;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
-  	this.eventos = {name:"", local:""}
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public storage: Storage,
+    public eventoProvider: EventoProvider ) {
+  	this.evento = new Evento;
   }
 
   ionViewDidLoad() {
@@ -27,7 +32,9 @@ export class AddeventoPage {
   }
 
   onRegisteredButtonClick() {
-  	this.storage.set('eventos',JSON.stringify(this.eventos));
+
+    this.eventoProvider.add(this.evento);
+  	// this.storage.set('eventos',JSON.stringify(this.eventos));
   	this.navCtrl.pop();
   }
 

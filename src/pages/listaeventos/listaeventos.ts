@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddeventoPage } from '../addevento/addevento';
 import { ListaconvidadosPage } from '../listaconvidados/listaconvidados';
+import { EventoProvider } from '../../providers/evento/evento';
+
 
 /**
  * Generated class for the ListaeventosPage page.
@@ -17,20 +19,18 @@ import { ListaconvidadosPage } from '../listaconvidados/listaconvidados';
 })
 export class ListaeventosPage {
 
-  eventos: any[] = [
-    {id:0,nome:"Festa lá no meu Apê"}, 
-    {id:1,nome:"Aniversário do Carlão"}, 
-    {id:2,nome:"Festa 123"}
-  ];
-
-
+  eventos: any[];
   selecionado: any = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public eventoProvider: EventoProvider ) {
    // this.eventos = {nome: "Festa lá no meu Apê", local:"Meu Apê", data:"20/05/2018"};
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    this.eventos = this.eventoProvider.all();
     console.log('ionViewDidLoad ListaeventosPage');
   }
 
