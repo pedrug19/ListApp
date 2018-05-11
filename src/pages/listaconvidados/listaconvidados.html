@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>Convidados</ion-title>
+    <ion-title center>Convidados</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,7 +24,11 @@
 	</ion-list>
 		<div text-center>
 		<button ion-button full >CONVIDADO</button>
-		<button (click)="onAddConvidadosButtonClick()" ion-button round outline>Adicionar Convidados</button>
+
+		<ion-fab bottom right>
+			<button (click)="onAddConvidadosButtonClick()" ion-fab>+</button>
+		</ion-fab>
+
 	</div>
 
 </ion-content>

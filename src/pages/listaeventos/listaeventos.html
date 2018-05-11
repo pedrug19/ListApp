@@ -21,8 +21,7 @@
 	    {{ evento.nome }}
 	  </button>  
 	</ion-list>
-
-	<div text-center>
-		<button (click)="onAddEventosButtonClick()" ion-button round outline>Adicionar Eventos</button>
-	</div>
+	<ion-fab bottom right>
+		<button (click)="onAddEventosButtonClick()" ion-fab>+</button>
+	</ion-fab>
 </ion-content>
