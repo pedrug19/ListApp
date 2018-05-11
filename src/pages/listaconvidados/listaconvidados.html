@@ -15,8 +15,13 @@
 
 <ion-content padding>
 	<ion-label>
-		Convidado
+		{{texto}}
 	</ion-label>
+	<ion-list>
+	  <button ion-item *ngFor="let convidado of convidados" (click)="onConvidadoClick(convidados.id)">
+	    {{ convidado.nome }}
+	  </button>  
+	</ion-list>
 		<div text-center>
 		<button ion-button full >CONVIDADO</button>
 
