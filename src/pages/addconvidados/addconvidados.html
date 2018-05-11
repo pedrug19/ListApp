@@ -16,16 +16,21 @@
 <ion-content padding>
 	<div text-center>
 		<ion-item>
-	    	<ion-input placeholder="Nome" [(ngModel)]= this.convidados.name type="text"></ion-input>
+			<ion-label floating>Nome</ion-label>
+	    	<ion-input [(ngModel)]= this.convidados.name type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
-	    	<ion-input placeholder="RG"  [(ngModel)]= this.convidados.rg type="text"></ion-input>
+					<ion-label floating>RG</ion-label>
+	    	<ion-input [(ngModel)]= this.convidados.rg type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
-	    	<ion-input placeholder="Grupo" [(ngModel)]= this.convidados.grupo type="text"></ion-input>
-	  	</ion-item>		
+					<ion-label floating>Grupo</ion-label>
+	    	<ion-input [(ngModel)]= this.convidados.grupo type="text"></ion-input>
+			</ion-item>
+			
+			<ion-row style="height: 10pt"></ion-row>
 
 	  	<ion-list radio-group>
 		  <ion-item>
