@@ -12,7 +12,6 @@ import { ListaconvidadosPage } from '../pages/listaconvidados/listaconvidados';
 import { AddeventoPage } from '../pages/addevento/addevento';
 import { AddconvidadosPage } from '../pages/addconvidados/addconvidados';
 
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,6 +24,7 @@ export class MyApp {
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
+    this.splashScreen.show();
 
     // used for an example of ngFor and navigation
     this.pages = [
