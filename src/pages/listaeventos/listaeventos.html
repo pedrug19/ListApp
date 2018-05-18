@@ -17,9 +17,15 @@
 <ion-content padding>
 
 	<ion-list>
-	  <button ion-item *ngFor="let evento of eventos" (click)="onEditEventoClick(evento.id)">
-	    {{ evento.nome }}
-	  </button>  
+		<ion-item *ngFor="let evento of eventos">
+			{{ evento.nome }}
+			<button ion-button color="dark" clear (click)="onEditEventoClick(evento.id)">
+				<ion-icon name="create"></ion-icon>
+			</button>
+			<button ion-button color="dark" clear (click)="onEventoClick(evento.id)">
+				<ion-icon name="arrow-dropright"></ion-icon>
+			</button>
+		</ion-item>  
 	</ion-list>
 	<ion-fab bottom right>
 		<button (click)="onAddEventosButtonClick()" ion-fab>+</button>
