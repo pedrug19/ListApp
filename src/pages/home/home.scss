@@ -2,15 +2,40 @@ page-home {
 
 }
 
+.scroll-content {
+    display: table !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .scroll {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
 .listapp{
 	font-size: 4em;
 	margin-left: auto;
     margin-right: auto;
     display: block;
+<<<<<<< HEAD
     margin-top: auto;
     margin-bottom: auto;
 }
 
 .homescreen{
     align-items: center;
+=======
+   
+}
+
+.homescreen{
+    align-items: center !important;
+>>>>>>> 656f34e2653a45b81e74fe85be5c6402078d2677
 }
