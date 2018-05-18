@@ -34,4 +34,8 @@ export class EventoProvider {
     return this.eventos[id];
   }
 
+  size(){
+    return Object.keys(this.eventos).length;
+  }
+
 }
