@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { RegistroPage } from '../pages/registro/registro';
 import { ListaeventosPage } from '../pages/listaeventos/listaeventos';
+import { ListaconvidadosPage } from '../pages/listaconvidados/listaconvidados';
 import { AddeventoPage } from '../pages/addevento/addevento';
 import { AddconvidadosPage } from '../pages/addconvidados/addconvidados';
 

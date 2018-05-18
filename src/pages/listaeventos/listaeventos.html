@@ -4,22 +4,24 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+-->
 <ion-header>
 
   <ion-navbar>
-    <ion-title center>Eventos</ion-title>
+    <ion-title text-center>Lista de Eventos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<div text-center>
-		<button (click)="onEventoButtonClick()" ion-button full >EVENTO</button>
-  </div>
-  
-		<ion-fab bottom right>
-			<button (click)="onAddEventosButtonClick()" ion-fab>+</button>
-		</ion-fab>
 
+	<ion-list>
+	  <button ion-item *ngFor="let evento of eventos" (click)="onEventoClick(evento.id)">
+	    {{ evento.nome }}
+	  </button>  
+	</ion-list>
+	<ion-fab bottom right>
+		<button (click)="onAddEventosButtonClick()" ion-fab>+</button>
+	</ion-fab>
 </ion-content>
