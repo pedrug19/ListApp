@@ -37,5 +37,10 @@ export class EventoProvider {
   size(){
     return Object.keys(this.eventos).length;
   }
+  
+  update(object){
+    this.eventos[object.id] = object;
+
+  }
 
 }
