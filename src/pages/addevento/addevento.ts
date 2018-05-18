@@ -38,10 +38,12 @@ export class AddeventoPage {
   }
 
   onRegisteredButtonClick() {
-    this.evento.id = this.size;
-    if(this.evento.id == null)
-      this.evento.id = 3;
-    this.eventoProvider.add(this.evento);
+    if(this.evento.id == null){
+      this.evento.id = this.size;
+      this.eventoProvider.add(this.evento);
+    }else{
+      this.eventoProvider.update(this.evento);
+    }
   	// this.storage.set('eventos',JSON.stringify(this.eventos));
   	this.navCtrl.pop();
   }
