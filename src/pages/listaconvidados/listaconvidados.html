@@ -18,7 +18,7 @@
 		{{nevento.nome}}
 	</ion-label>
 	<ion-list>
-	  <button ion-item *ngFor="let convidado of convidados" (click)="onConvidadoClick(convidados.id)">
+	  <button ion-item *ngFor="let convidado of convidados" (click)="onConvidadoClick(convidado.id)">
 	    {{ convidado.nome }}
 	  </button>  
 	</ion-list>

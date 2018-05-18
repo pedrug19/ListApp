@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { ConvidadoProvider } from '../../providers/convidado/convidado';
+import { Convidado } from '../../interfaces/Convidado';
 
 /**
  * Generated class for the AddconvidadosPage page.
@@ -16,19 +18,29 @@ import { Storage } from '@ionic/storage';
 })
 export class AddconvidadosPage {
 
-  convidados: any;
+  convidado: Convidado;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
-  	this.convidados = {name:"", rg:"", grupo:""}
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public storage: Storage,
+    public convidadoProvider: ConvidadoProvider) {
+    this.convidado = new Convidado;
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddconvidadosPage');
+    var idSelecionado = this.navParams.get('id');
+    if(idSelecionado != null)
+      this.convidado = this.convidadoProvider.get(idSelecionado);
   }
 
-  onConvidadosButtonClick() {
-  	this.storage.set('convidados', JSON.stringify(this.convidados))
-  	this.navCtrl.pop();
+  onSalvarConvidadosButtonClick() {
+  	 if(this.convidado.id == null){
+      this.convidado.id = this.convidadoProvider.size();
+      this.convidadoProvider.add(this.convidado);
+    }else{
+      this.convidadoProvider.update(this.convidado);
+    }
+    this.navCtrl.pop();
   }
 
 }

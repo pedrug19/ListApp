@@ -16,15 +16,15 @@
 <ion-content padding>
 	<div text-center>
 		<ion-item>
-	    	<ion-input placeholder="Nome" [(ngModel)]= this.convidados.name type="text"></ion-input>
+	    	<ion-input placeholder="Nome" [(ngModel)]= convidado.nome type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
-	    	<ion-input placeholder="RG"  [(ngModel)]= this.convidados.rg type="text"></ion-input>
+	    	<ion-input placeholder="RG"  [(ngModel)]= convidado.rg type="text"></ion-input>
 	  	</ion-item>
 
 	  	<ion-item>
-	    	<ion-input placeholder="Grupo" [(ngModel)]= this.convidados.grupo type="text"></ion-input>
+	    	<ion-input placeholder="Grupo"  type="text"></ion-input>
 	  	</ion-item>		
 
 	  	<ion-list radio-group>
@@ -53,7 +53,7 @@
 
 
 
-		<button (click)="onConvidadosButtonClick()" ion-button>Adicionar Convidado</button>
+		<button (click)="onSalvarConvidadosButtonClick()" ion-button>Salvar</button>
 	</div>
 
 </ion-content>

@@ -19,7 +19,6 @@ import { Evento } from '../../interfaces/Evento';
 export class AddeventoPage {
 
   evento: Evento;
-  size: any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -29,7 +28,6 @@ export class AddeventoPage {
   }
 
   ionViewDidLoad() {
-    this.size = this.eventoProvider.size();
     var idSelecionado = this.navParams.get('id');
     if(idSelecionado != null)
       this.evento = this.eventoProvider.get(idSelecionado);
@@ -39,12 +37,11 @@ export class AddeventoPage {
 
   onRegisteredButtonClick() {
     if(this.evento.id == null){
-      this.evento.id = this.size;
+      this.evento.id = this.eventoProvider.size();
       this.eventoProvider.add(this.evento);
     }else{
       this.eventoProvider.update(this.evento);
     }
-  	// this.storage.set('eventos',JSON.stringify(this.eventos));
   	this.navCtrl.pop();
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AddconvidadosPage } from '../addconvidados/addconvidados';
+import { ConvidadoProvider } from '../../providers/convidado/convidado';
 
 
 /**
@@ -17,22 +18,20 @@ import { AddconvidadosPage } from '../addconvidados/addconvidados';
 })
 export class ListaconvidadosPage {
 
-   convidados: any[] = [
-    {id:0,nome:"Latino"}, 
-    {id:1,nome:"Mc Lan"}, 
-    {id:2,nome:"Bilbo"}
-  ];
+   convidados: any[];
 
-   selected: any;  
+   selecionado: any;  
    nevento: any;
 
   constructor(
     public navCtrl: NavController, 
-    public navParams: NavParams) {
+    public navParams: NavParams, 
+    public convidadoProvider: ConvidadoProvider) {
     this.nevento = this.navParams.get('selecionado');
   }
 
   ionViewDidEnter() {
+    this.convidados = this.convidadoProvider.all();
     console.log('ionViewDidLoad ListaconvidadosPage');
   }
 
@@ -41,8 +40,7 @@ export class ListaconvidadosPage {
   }
 
   onConvidadoClick(id) {
-    this.selected = this.convidados[id];
-    this.navCtrl.push(AddconvidadosPage);
+    this.navCtrl.push(AddconvidadosPage, { id: id });
   }
 
   /*onConvidadoButtonClick() {

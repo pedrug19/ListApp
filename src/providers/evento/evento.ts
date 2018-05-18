@@ -12,9 +12,9 @@ import { Evento } from '../../interfaces/Evento'
 export class EventoProvider {
 
   eventos: Evento[] = [
-    {id:0,nome:"Festa lá no meu Apê", data:null, local:null, horario:null }, 
-    {id:1,nome:"Aniversário", data:null, local:null, horario:null }, 
-    {id:2,nome:"Festa 123", data:null, local:null, horario:null }
+    {id:0,nome:"Festa lá no meu Apê", data:"2019-05-04", local:"Meu apê", horario:null }, 
+    {id:1,nome:"Aniversário", data:"2018-11-03", local:"Casa do Pedren", horario:null }, 
+    {id:2,nome:"Festa 123", data:"2017-12-29", local:"Aqui", horario:null }
   ];
 
 
