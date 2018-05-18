@@ -12,9 +12,9 @@ import { Evento } from '../../interfaces/Evento'
 export class EventoProvider {
 
   eventos: Evento[] = [
-    {id:0,nome:"Festa lá no meu Apê", data:"2018-03-02", local:"Meu Apê", horario:null }, 
-    {id:1,nome:"Aniversário", data:"2017-11-29", local:"Aqui", horario:null }, 
-    {id:2,nome:"Festa 123", data:"2019-01-26", local:"casa123", horario:null }
+    {id:0,nome:"Festa lá no meu Apê", data:null, local:null, horario:null }, 
+    {id:1,nome:"Aniversário", data:null, local:null, horario:null }, 
+    {id:2,nome:"Festa 123", data:null, local:null, horario:null }
   ];
 
 
@@ -25,14 +25,13 @@ export class EventoProvider {
   all() {
   	return this.eventos;
   }
+  
   add(object) {
     this.eventos.push(object);
   }
+
   get(id){
     return this.eventos[id];
-  }
-  size(){
-    return Object.keys(this.eventos).length;
   }
 
 }
